@@ -1,6 +1,6 @@
 package com.aml.transactioningestservice.component;
 
-import com.aml.transactioningestservice.dto.TransactionInput;
+import com.aml.transactioningestservice.model.TransactionInput;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;

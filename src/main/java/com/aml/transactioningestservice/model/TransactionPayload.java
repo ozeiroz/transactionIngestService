@@ -8,6 +8,7 @@ public record TransactionPayload(
     UUID transactionId,
     String externalTransactionId,
     String userId,
+    String fullName,
     BigDecimal amount,
     String currency,
     String merchantId,
