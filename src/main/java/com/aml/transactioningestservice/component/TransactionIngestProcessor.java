@@ -1,6 +1,6 @@
 package com.aml.transactioningestservice.component;
 
-import com.aml.transactioningestservice.dto.TransactionInput;
+import com.aml.transactioningestservice.model.TransactionInput;
 import com.aml.transactioningestservice.model.AmlTransactionRawEvent;
 import com.aml.transactioningestservice.model.EventMetadata;
 import com.aml.transactioningestservice.model.IngestSource;
@@ -8,12 +8,12 @@ import com.aml.transactioningestservice.model.TransactionPayload;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.UUID;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class TransactionIngestProcessor {
     private final KafkaTemplate<String, AmlTransactionRawEvent> kafkaTemplate;
@@ -28,6 +28,7 @@ public class TransactionIngestProcessor {
                 transactionId,
                 transaction.getExternalTransactionId(),
                 transaction.getUserId(),
+                transaction.getFullName(),
                 transaction.getAmount(),
                 transaction.getCurrency(),
                 transaction.getMerchantId(),

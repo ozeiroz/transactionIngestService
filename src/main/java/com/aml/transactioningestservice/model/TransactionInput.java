@@ -1,4 +1,4 @@
-package com.aml.transactioningestservice.dto;
+package com.aml.transactioningestservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +15,7 @@ import java.time.Instant;
 public class TransactionInput {
     private String externalTransactionId;
     private String userId;
+    private String fullName;
     private String currency;
     private String merchantId;
     private String country;

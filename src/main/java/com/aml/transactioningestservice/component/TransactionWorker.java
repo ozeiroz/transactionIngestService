@@ -1,6 +1,5 @@
 package com.aml.transactioningestservice.component;
 
-import com.aml.transactioningestservice.dto.TransactionInput;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,7 +15,7 @@ public class TransactionWorker {
     private final TransactionIngestProcessor transactionIngestProcessor;
     private final TransactionSource transactionSource;
 
-    @Scheduled(fixedDelayString = "${ingest.schedule.fixedDelay:500}")
+    @Scheduled(fixedDelayString = "${ingest.schedule.fixedDelay}")
     public void process() {
         log.info("Starting transaction processing at {}", Instant.now());
 
